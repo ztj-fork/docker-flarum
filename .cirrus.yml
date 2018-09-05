@@ -1,0 +1,2 @@
+docker_builder:
+  check_script: docker build -t mondedie/docker-flarum .
