@@ -49,6 +49,7 @@ RUN echo "@community https://nl.alpinelinux.org/alpine/v3.8/community" >> /etc/a
  && rm -rf /flarum/.composer /var/cache/apk/*
 
 COPY rootfs /
+RUN chown $UID:$GID /flarum
 RUN chmod +x /usr/local/bin/* /services/*/run /services/.s6-svscan/*
 VOLUME /flarum/app/extensions /etc/nginx/conf.d
 EXPOSE 8888
